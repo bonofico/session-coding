@@ -1,8 +1,9 @@
 # print_action method expects two parameters "action" and "amount"
 def print_action(action, amount)
-  puts "You've asked to #{action} an amount of #{amount}$. Performing your request..."
+  puts "You've asked to #{action} an amount of #{amount}$. "
+  puts "Performing your request..."
 end
-
+# Answer to question 7: Use meaningful names for every piece of code you write
 balance = 1000
 
 print "Please enter your personal name:  "
@@ -11,18 +12,29 @@ name = gets.chomp.capitalize!
 print "What action would you like to perform?  "
 action = gets.chomp
 
-amount = 20
+if ( action != "view" && action != "deposit" && action != "withdraw" )
+  raise "Action not allowed!"
+end
 
-print_action(amount)
+if action != "view"
+print "What amount would you like to #{action}?  "
+amount = gets.to_i
+end
 
 if action == "withdraw"
+  puts "Your balance is #{balance}$"
   balance -= amount
 elsif action == "deposit"
+  puts "Your balance is #{balance}$"
   balance += amount
+end
 
-
-puts "Hi #{name}, Your current balance was changed and is now: #{balance}$"  
-
+if action == "view"
+  puts "Your balance is #{balance}$"
+else
+  print_action(action, amount)
+  puts "Hi #{name}, Your current balance was changed and is now: #{balance}$"  
+end
 
 # Bank home assignment
 # ---------------------

@@ -1,7 +1,7 @@
-Fix this infinite loop:
+# Fix this infinite loop:
 i = 0
 while i < 5
   puts i
-  # Add your code here!
+  i+=1
   
 end
