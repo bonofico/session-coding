@@ -4,7 +4,7 @@ def print_action(action, amount)
   puts "Performing your request..."
 end
 # Answer to question 7: Use meaningful names for every piece of code you write
-balance = 1000
+balance = 100 + Random.rand(901)
 
 print "Please enter your personal name:  "
 name = gets.chomp.capitalize!
